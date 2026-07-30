@@ -27,11 +27,13 @@ var visAni01 = gsap.timeline({
 ease: 'power2.out'<br>
 ease: 'power3.out'<br>
 ease: 'back.out(1.7)'
+
 <br>
 <br>
 <br>
 <br>
 <br>
+
 # 반응형
 
 ## 해상도에 따라 스크립트 나누기
@@ -50,7 +52,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
   	}
 });
 ```
-
+<br>
+<br>
+<br>
+<br>
+<br>
 
 # 공통으로 사용
 
@@ -71,6 +77,11 @@ document.querySelectorAll('.con').forEach((section) => {
   tl.from(section.querySelector('.tit02 em'), {opacity:0, y:100, duration:1, ease:'power2.out'})
 });
 ```
+<br>
+<br>
+<br>
+<br>
+<br>
 
 # gsap으로 토글 클래스
 
@@ -95,3 +106,66 @@ document.querySelectorAll('.con02 .box_wrap').forEach((box) => {
   });
 });
 ```
+<br>
+<br>
+<br>
+<br>
+<br>
+
+# split text
+
+## split text
+
+```js
+document.fonts.ready.then(() => {
+	let sub0201Split01 = SplitText.create(".con01 .split", {
+	  type: "words,lines",
+	  mask: "words"
+	});
+
+	gsap.from(sub0201Split01.words, {
+	  scrollTrigger: {
+		trigger: ".con01",   
+		start: "top 80%",         
+		//markers: true,
+	  },
+	  y: 50,
+	  opacity: 0,
+	  duration: 0.7,
+	  ease: "back.out(1.2)",
+	  stagger: 0.2
+	});
+});
+```
+<br>
+<br>
+<br>
+
+## split text 공통으로 쓰기
+
+```js
+gsap.registerPlugin(ScrollTrigger, SplitText);
+
+document.fonts.ready.then(() => {
+  document.querySelectorAll('.split').forEach((el) => {
+    let split = SplitText.create(el, {
+      type: "words,lines",
+      mask: "words"
+    });
+
+    gsap.from(split.words, {
+      y: 50,
+      opacity: 0,
+      duration: 0.7,
+      ease: "back.out(1.2)",
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: el.closest('.section'),  
+        start: "top 50%",                
+        // markers: true
+      }
+    });
+  });
+});
+```
+
