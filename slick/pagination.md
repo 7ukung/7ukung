@@ -2,7 +2,7 @@
 
 ## slick 에 pagination 추가하기 (ex. 1/4)
 
-### 코드
+### html
 
 ```html
 <div class="slide_items slide_items01" data-aos="fade-left" data-aos-offset="100" data-aos-duration="1000">
@@ -12,10 +12,7 @@
   </div>
 </div><!-- slide01_items -->
 ```
-<br>
-<br>
-<br>
-
+### js
 ```js
 $('.visual').slick({
   fade: true,
