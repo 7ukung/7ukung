@@ -27,12 +27,11 @@ var visAni01 = gsap.timeline({
 ease: 'power2.out'<br>
 ease: 'power3.out'<br>
 ease: 'back.out(1.7)'
-
-
-
-
-
- 
+<br>
+<br>
+<br>
+<br>
+<br>
 # 반응형
 
 ## 해상도에 따라 스크립트 나누기
