@@ -112,7 +112,7 @@ document.querySelectorAll('.con02 .box_wrap').forEach((box) => {
 <br>
 <br>
 
-# split text
+# Split text
 
 ## split text
 
