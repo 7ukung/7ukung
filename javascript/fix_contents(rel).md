@@ -28,9 +28,8 @@ window.onscroll = function (e) {
 ```
 
 ### 설명
-푸터 높이에서 .quick에 rel클래스를 붙여서 
+푸터 높이에서 .quick에 rel클래스 추가 
 ```css
 .quick{position:fixed;bottom:0;}
-.quick{position:absolute;bottom:100px;}
+.quick.rel{position:absolute;bottom:100px;}
 ```
-로 변경
