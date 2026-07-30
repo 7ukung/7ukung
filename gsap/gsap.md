@@ -40,9 +40,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 	//vis
 	if (window.innerWidth >= 1400) {
 	  
-	 
-		  
-	 
 	} else if (window.innerWidth >= 768) {
 
 	} else {
