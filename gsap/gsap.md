@@ -23,8 +23,9 @@ var visAni01 = gsap.timeline({
 
 ### 설명
 자주 쓰는 애니메이션
-ease: 'power2.out'
-ease: 'power3.out'
+
+ease: 'power2.out'<br>
+ease: 'power3.out'<br>
 ease: 'back.out(1.7)'
 
 
