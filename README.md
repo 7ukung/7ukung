@@ -54,15 +54,7 @@
 
 
 
----
 
-# 📅 Update Log
-
-| Date | Content |
-|------|---------|
-
-
-<div align="center">
 
 Made with ❤️ by 7ukung
 
