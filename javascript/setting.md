@@ -1,4 +1,4 @@
-### header_sub
+## header_sub.php
 ```js
 <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script> 
 
@@ -11,6 +11,7 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 ```
 
+## main.php
 ```js
 //lenis
 ScrollTrigger.config({ normalizeScroll: true }); 
