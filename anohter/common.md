@@ -54,7 +54,7 @@ input:focus,select:focus,textarea:focus{outline:0;}
 ```
 
 ## head
-```js
+```html
 <!doctype html>
 <html lang="ko">
 <head>
