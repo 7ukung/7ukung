@@ -7,8 +7,8 @@
 ```html
 <div class="slide_items slide_items01" data-aos="fade-left" data-aos-offset="100" data-aos-duration="1000">
   <div class="numcount sPage1">
-    <span class="now">1</span>
-    <span class="total">6</span>
+    <span class="now"></span>
+    <span class="total"></span>
   </div>
 </div><!-- slide01_items -->
 ```
