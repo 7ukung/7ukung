@@ -5,7 +5,7 @@
 ### html
 
 ```html
-<div class="slide_items slide_items01" data-aos="fade-left" data-aos-offset="100" data-aos-duration="1000">
+<div class="slide_items slide_items01">
   <div class="numcount sPage1">
     <span class="now"></span>
     <span class="total"></span>
