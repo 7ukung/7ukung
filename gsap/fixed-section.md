@@ -12,6 +12,7 @@ ScrollTrigger.matchMedia({
     ScrollTrigger.create({
       trigger: wrap,
       start: 'top top',
+      end: () => "+=" + (right.offsetHeight - left.offsetHeight),
       pin: left,
       scrub: true,
       //markers: true
