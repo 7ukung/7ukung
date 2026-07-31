@@ -14,7 +14,7 @@ ScrollTrigger.matchMedia({
       start: 'top top',
       pin: left,
       scrub: true,
-      markers: true
+      //markers: true
     });
 
   }
