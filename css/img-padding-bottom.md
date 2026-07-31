@@ -1,4 +1,4 @@
-# padding-bottom을 사용한 이미지 정렬
+# Padding-bottom을 사용한 이미지 정렬
 
 ## 비례값계산기로 이미지 비율을 계산해서 padding-bottom에 넣기 
 ### 이미지를 박스 사이즈 안에 가운데 정렬하는 css
