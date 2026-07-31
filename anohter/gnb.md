@@ -67,6 +67,6 @@
 #header .gnb span a{display: block;font-size: 16px; color: #222; font-weight: 500;}
 #header .gnb .lnb_sub{position: absolute; top: 97px; left: 50%; transform:translateX(-50%);z-index: 100; width: 240px; background: rgba(0,0,0,.5);}
 #header .gnb .lnb_sub ul{display: none;padding: 30px 0px;border-top: 4px solid #962c31;}
-#header .gnb .lnb_sub ul li a{display: block;color: #fff;font-size: 16px;text-align: center;300}
+#header .gnb .lnb_sub ul li a{display: block;color: #fff;font-size: 16px;text-align: center;}
 #header .gnb .lnb_sub ul li:not(:last-child){margin-bottom: 20px;}
 ```
