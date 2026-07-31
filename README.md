@@ -47,7 +47,7 @@
 
 ---
 
-### 🔥 Troubleshooting
+### 🔥 ETC/Troubleshooting
 
 - 
 ---
