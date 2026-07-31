@@ -1,6 +1,6 @@
 # input checkbox,checkAll
 
-## input 체크박스 전체 채크 script
+## input 체크박스 전체 체크 
 
 ### html
 ```html
