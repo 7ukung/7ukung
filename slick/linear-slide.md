@@ -15,7 +15,9 @@ $('.sec02_bg_slide').slick({
     centerMode: false,
     draggable: false,
     swipe: false,
-    touchMove: false
+    touchMove: false,
+    pauseOnHover:false,
+    pauseOnFocus:false,
 });
 ```
 
