@@ -65,7 +65,8 @@ initSlick('#section03 .sec03_slide');
 ```
 
 ### 설명
-슬릭 안쓰고 탭메뉴만 사용할 땐 tab-menu js에서 slick 부분 삭제 <br>
+슬릭 안쓰고 탭메뉴만 사용할 땐 tab-menu js에서 slick 부분 삭제. <br>
+<br>
 여러 section에서 사용한다면<br>
 <br>
 tab-menu js에 <br>
@@ -79,6 +80,7 @@ initSlick('#section03 .sec03_slide');<br>
 initSlick('#section04 .sec03_slide');<br>
 initSlick('#section05 .sec03_slide');<br>
 ...<br>
+<br>
 추가하거나<br>
 <br>
 공통클래스 주고<br>
