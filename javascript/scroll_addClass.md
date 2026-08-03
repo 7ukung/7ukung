@@ -1,6 +1,6 @@
 # Scroll addClass()
 
-## 스크롤내릴 때 섹션 offset top에서 class 붙이기
+## 스크롤 내릴 때 섹션 offset top에서 class 붙이기
 ### js
 ```js
 $(window).scroll(function() {    
