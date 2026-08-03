@@ -1,11 +1,11 @@
 # Responsive
 ## js
 ```js
-$(window).resize(function() {
-	if($(window).width() < 1400) {
-	
-	} else {
-	
-	}
-});
+if ($(window).width() < 768) {
+
+} else if ($(window).width() < 1400) {
+
+} else {
+
+}
 ```
