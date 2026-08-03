@@ -55,7 +55,7 @@ $('.navi_bg').click(function(){
 .navigation h3:nth-child(1) a{border-top: 1px solid #ddd;}
 .navigation h3.active a:after,
 .navigation h3.on a:after{transform:translateY(-50%) rotate(180deg);}
-.navigation h3 a{position: relative;height:60px;width:100%;background-color:#fff;display: flex;align-items: center;padding: 0 20px;color:#222;font-size:16px;font-weight: 400;}
+.navigation h3 a{position: relative;height:100%;width:100%;background-color:#fff;display: flex;align-items: center;padding: 0 20px;color:#222;font-size:16px;font-weight: 400;}
 .navigation h3.on a,
 .navigation h3.active a,
 .navigation h3.hover a{font-weight: 500;}
