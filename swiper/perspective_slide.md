@@ -182,6 +182,9 @@ gsap.registerPlugin(ScrollTrigger);
 		
 	});
 
+	// 진입시 모션
+		gsap.timeline()
+		.from('.s_visual .mid .swiperBx .swiper',{opacity:0,y:100,stagger:0.4,duration:1,ease:'back'},0.2)
 
 	$(window).on('load',function(){
 		ScrollTrigger.refresh();
