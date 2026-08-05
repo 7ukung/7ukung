@@ -2,6 +2,7 @@
 
 ![Static Badge](https://img.shields.io/badge/Javascript-%2389c3eb?style=plastic&logo=javascript&logoColor=gray)
 ![Static Badge](https://img.shields.io/badge/css-%23ff7ed6?style=plastic&logo=css&logoColor=white)
+![Static Badge](https://img.shields.io/badge/scss-%23c92796?style=plastic&logo=Sass&logoColor=white)
 ![Static Badge](https://img.shields.io/badge/HTML-%23ff5984?style=plastic&logo=HTML5&logoColor=white)
 ![Static Badge](https://img.shields.io/badge/photoshop-%232e63ea?style=plastic)
 [![Static Badge](https://img.shields.io/badge/GSAP-%230ae448?style=plastic&link=https%3A%2F%2Fgsap.com%2F)](https://gsap.com/)
