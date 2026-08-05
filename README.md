@@ -4,7 +4,7 @@
 ![Static Badge](https://img.shields.io/badge/css-%23ff7ed6?style=plastic&logo=css&logoColor=white)
 ![Static Badge](https://img.shields.io/badge/scss-%23c92796?style=plastic&logo=Sass&logoColor=white)
 ![Static Badge](https://img.shields.io/badge/HTML-%23ff5984?style=plastic&logo=HTML5&logoColor=white)
-![Static Badge](https://img.shields.io/badge/photoshop-%232e63ea?style=plastic)
+![Static Badge](https://img.shields.io/badge/Photoshop-%232e63ea?style=plastic)
 [![Static Badge](https://img.shields.io/badge/GSAP-%23%230AE448?style=plastic&logo=gsap&logoColor=white)](https://gsap.com/)
 
 
