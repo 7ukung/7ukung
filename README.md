@@ -4,7 +4,8 @@
 ![Static Badge](https://img.shields.io/badge/css-%23ff91a3?style=plastic)
 ![Static Badge](https://img.shields.io/badge/html-%23ca9fe7?style=plastic)
 ![Static Badge](https://img.shields.io/badge/photoshop-%232e63ea?style=plastic)
-![Static Badge](https://img.shields.io/badge/GSAP-%230ae448?style=plastic)
+![Static Badge](https://img.shields.io/badge/GSAP-%230ae448?style=plastic&link=https%3A%2F%2Fgsap.com%2F)
+
 
 
 
