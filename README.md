@@ -16,7 +16,7 @@ const profile = {
     email: "7ukung@gmail.com",
     //site: "Preparing...",
     locate: "Seoul, Korea",
-    skill: ["HTML", "CSS", "SCSS", "SASS", "JavaScript", "JQuery", "Photoshop", "illustrator"],
+    skill: ["HTML", "CSS", "SCSS", "SASS", "JavaScript", "jQuery", "Photoshop", "illustrator"],
     opend:  true,
     update: "2026-08-05",
     call: ()=> {
