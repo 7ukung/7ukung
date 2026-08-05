@@ -9,6 +9,20 @@
 ![Static Badge](https://img.shields.io/badge/Cross%20browsing-%23ffcc00?style=plastic&logo=googlechrome&logoColor=gray)
 ![Static Badge](https://img.shields.io/badge/GitHub-%23181717?style=plastic&logo=github&logoColor=white)
 
+```js
+const profile = {
+    name: "박주경",
+    email: "7ukung@gmail.com",
+    //site: "Preparing...",
+    locate: "Seoul Korea",
+    skill: ["HTML", "CSS", "SCSS", "SASS", "JavaScript", "JQuery"],
+    opend:  true,
+    update: "2026-08-05",
+    call: ()=> {
+        ui.alert("Hello, world!");
+    }
+};
+```
 
 
 
