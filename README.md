@@ -7,6 +7,8 @@
 ![Static Badge](https://img.shields.io/badge/Photoshop-%23294155?style=plastic)
 [![Static Badge](https://img.shields.io/badge/GSAP-%23%230AE448?style=plastic&logo=gsap&logoColor=white)](https://gsap.com/)
 ![Static Badge](https://img.shields.io/badge/Cross%20browsing-%23ffcc00?style=plastic&logo=googlechrome&logoColor=gray)
+![Static Badge](https://img.shields.io/badge/GitHub-%23181717?style=plastic&logo=github&logoColor=white)
+
 
 
 
