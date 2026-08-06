@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7ukung — Juk's Publishing Note</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg-0:#0f1016;
+    --bg-1:#161822;
+    --bg-2:#1d2030;
+    --line:#2a2e42;
+    --text-0:#e9e9f1;
+    --text-1:#9b9fb8;
+    --text-2:#5f6380;
+    --accent:#b8a4ff;
+    --accent-dim:#7a6bb0;
+    --mint:#7ee0c3;
+    --coral:#ff9d84;
+    --mono:'JetBrains Mono', monospace;
+    --sans:'Pretendard', -apple-system, sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg-0);
+    color:var(--text-0);
+    font-family:var(--sans);
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{ background:var(--accent-dim); color:#fff; }
+
+  /* ===== layout ===== */
+  .app{
+    display:grid;
+    grid-template-columns: 260px 1fr;
+    min-height:100vh;
+  }
+  @media (max-width: 820px){
+    .app{ grid-template-columns: 1fr; }
+    .sidebar{ position:static; height:auto; }
+  }
+
+  /* ===== sidebar ===== */
+  .sidebar{
+    background:var(--bg-1);
+    border-right:1px solid var(--line);
+    padding:28px 0 20px;
+    position:sticky; top:0; height:100vh; overflow-y:auto;
+  }
+  .brand{
+    display:flex; align-items:center; gap:10px;
+    padding:0 20px 24px;
+    border-bottom:1px solid var(--line);
+    margin-bottom:18px;
+  }
+  .brand .dot{ width:10px; height:10px; border-radius:50%; background:var(--accent); box-shadow:0 0 12px var(--accent);}
+  .brand span{ font-family:var(--mono); font-weight:700; letter-spacing:.5px; font-size:15px; }
+
+  .tree-label{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:1.5px;
+    color:var(--text-2);
+    padding:0 20px 10px;
+    text-transform:uppercase;
+  }
+  .tree{ list-style:none; padding:0 10px; }
+  .tree li{ margin-bottom:2px; }
+  .tree a{
+    display:flex; align-items:center; gap:9px;
+    padding:7px 10px;
+    border-radius:6px;
+    color:var(--text-1);
+    text-decoration:none;
+    font-size:14px;
+    font-family:var(--mono);
+    transition: background .15s ease, color .15s ease, transform .15s ease;
+  }
+  .tree a:hover{ background:var(--bg-2); color:var(--text-0); transform:translateX(2px); }
+  .tree a .ico{ color:var(--accent); font-size:13px; width:14px; text-align:center; }
+  .tree a .cnt{ margin-left:auto; color:var(--text-2); font-size:11px; }
+
+  .sidebar-foot{
+    padding:20px 20px 0;
+    margin-top:18px;
+    border-top:1px solid var(--line);
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--text-2);
+    line-height:1.7;
+  }
+
+  /* ===== main / editor ===== */
+  .editor{ min-width:0; }
+  .tabbar{
+    display:flex;
+    border-bottom:1px solid var(--line);
+    background:var(--bg-1);
+    overflow-x:auto;
+  }
+  .tab{
+    font-family:var(--mono);
+    font-size:13px;
+    padding:12px 20px;
+    color:var(--text-2);
+    white-space:nowrap;
+    border-right:1px solid var(--line);
+  }
+  .tab.active{ color:var(--text-0); background:var(--bg-0); border-bottom:2px solid var(--accent); margin-bottom:-1px; }
+
+  .content{ padding:64px 48px 100px; max-width:920px; }
+  @media (max-width:600px){ .content{ padding:40px 20px 70px; } }
+
+  .eyebrow{
+    font-family:var(--mono);
+    color:var(--mint);
+    font-size:13px;
+    letter-spacing:2px;
+    margin-bottom:18px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{ content:''; width:22px; height:1px; background:var(--mint); display:inline-block; }
+
+  h1{
+    font-family:var(--mono);
+    font-weight:700;
+    font-size:clamp(34px, 6vw, 56px);
+    line-height:1.15;
+    letter-spacing:-.5px;
+    margin-bottom:14px;
+  }
+  h1 .accent{ color:var(--accent); }
+  .lede{
+    color:var(--text-1);
+    font-size:17px;
+    line-height:1.75;
+    max-width:560px;
+    margin-bottom:34px;
+  }
+  .lede b{ color:var(--text-0); font-weight:600; }
+
+  .badges{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:48px; }
+  .badge{
+    font-family:var(--mono);
+    font-size:12px;
+    padding:6px 12px;
+    border-radius:20px;
+    border:1px solid var(--line);
+    color:var(--text-1);
+    background:var(--bg-1);
+  }
+
+  /* code panel */
+  .code-panel{
+    background:var(--bg-1);
+    border:1px solid var(--line);
+    border-radius:12px;
+    overflow:hidden;
+    margin-bottom:56px;
+  }
+  .code-head{
+    display:flex; align-items:center; gap:8px;
+    padding:12px 16px;
+    border-bottom:1px solid var(--line);
+  }
+  .code-head .b{ width:11px; height:11px; border-radius:50%; }
+  .b.r{ background:#ff6767; } .b.y{ background:#ffc267; } .b.g{ background:#7ee0c3; }
+  .code-head .fname{ margin-left:8px; font-family:var(--mono); font-size:12px; color:var(--text-2); }
+  pre{
+    font-family:var(--mono);
+    font-size:13.5px;
+    line-height:1.85;
+    padding:22px 24px;
+    overflow-x:auto;
+    color:var(--text-1);
+  }
+  .k{ color:#c9b6ff; } .s{ color:var(--mint); } .c{ color:var(--text-2); } .p{ color:var(--coral); } .f{ color:var(--accent); }
+
+  /* folder grid */
+  .section-title{
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--text-2);
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    margin-bottom:18px;
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(200px,1fr));
+    gap:12px;
+    margin-bottom:8px;
+  }
+  .card{
+    display:block;
+    padding:18px 18px 16px;
+    background:var(--bg-1);
+    border:1px solid var(--line);
+    border-radius:10px;
+    text-decoration:none;
+    color:inherit;
+    transition:border-color .15s ease, transform .15s ease, background .15s ease;
+  }
+  .card:hover{ border-color:var(--accent-dim); background:var(--bg-2); transform:translateY(-2px); }
+  .card .top{ display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;}
+  .card .ico{ font-size:18px; }
+  .card .arrow{ color:var(--text-2); font-size:13px; transition:transform .15s ease; }
+  .card:hover .arrow{ transform:translateX(3px); color:var(--accent); }
+  .card .name{ font-family:var(--mono); font-weight:600; font-size:14.5px; margin-bottom:4px; }
+  .card .desc{ font-size:12.5px; color:var(--text-2); }
+
+  footer{
+    margin-top:70px;
+    padding-top:24px;
+    border-top:1px solid var(--line);
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--text-2);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+  }
+  footer a{ color:var(--text-1); text-decoration:none; }
+  footer a:hover{ color:var(--accent); }
+
+  @keyframes fadeUp{ from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);} }
+  .content > *{ animation:fadeUp .5s ease both; }
+  .content > *:nth-child(2){ animation-delay:.05s; }
+  .content > *:nth-child(3){ animation-delay:.1s; }
+  .content > *:nth-child(4){ animation-delay:.15s; }
+  .content > *:nth-child(5){ animation-delay:.2s; }
+  .content > *:nth-child(6){ animation-delay:.25s; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .content > *{ animation:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="brand"><span class="dot"></span><span>7UKUNG</span></div>
+
+    <div class="tree-label">Explorer</div>
+    <ul class="tree">
+      <li><a href="https://github.com/7ukung/7ukung/tree/main/gsap"><span class="ico">▸</span> gsap</a></li>
+      <li><a href="https://github.com/7ukung/7ukung/tree/main/javascript"><span class="ico">▸</span> javascript</a></li>
+      <li><a href="https://github.com/7ukung/7ukung/tree/main/css"><span class="ico">▸</span> css</a></li>
+      <li><a href="https://github.com/7ukung/7ukung/tree/main/slick"><span class="ico">▸</span> slick</a></li>
+      <li><a href="https://github.com/7ukung/7ukung/tree/main/swiper"><span class="ico">▸</span> swiper</a></li>
+      <li><a href="https://github.com/7ukung/7ukung/tree/main/anohter"><span class="ico">▸</span> anohter</a></li>
+      <li><a href="https://github.com/7ukung/7ukung/tree/main/cdn"><span class="ico">▸</span> cdn</a></li>
+      <li><a href="https://github.com/7ukung/7ukung/tree/main/etc"><span class="ico">▸</span> etc</a></li>
+    </ul>
+
+    <div class="sidebar-foot">
+      locate: Seoul, Korea<br>
+      status: <span style="color:var(--mint)">● open</span>
+    </div>
+  </aside>
+
+  <main class="editor">
+    <div class="tabbar">
+      <div class="tab active">profile.js</div>
+      <div class="tab">README.md</div>
+    </div>
+
+    <div class="content">
+      <div class="eyebrow">PUBLISHING NOTE</div>
+
+      <h1>퍼블리싱하며 <span class="accent">쌓아온</span><br>코드 서랍.</h1>
+
+      <p class="lede">
+        gsap, javascript, css 등 실무에서 막혔던 순간들을 폴더별로 정리해둔 기록입니다.
+        <b>필요할 때 꺼내 쓰는 스니펫 노트</b>이자, 크로스브라우징까지 고려한 퍼블리싱 메모예요.
+      </p>
+
+      <div class="badges">
+        <span class="badge">JavaScript</span>
+        <span class="badge">jQuery</span>
+        <span class="badge">CSS / SCSS</span>
+        <span class="badge">HTML</span>
+        <span class="badge">GSAP</span>
+        <span class="badge">Cross Browsing</span>
+        <span class="badge">Photoshop</span>
+      </div>
+
+      <div class="code-panel">
+        <div class="code-head">
+          <span class="b r"></span><span class="b y"></span><span class="b g"></span>
+          <span class="fname">profile.js</span>
+        </div>
+        <pre><span class="k">const</span> profile = {
+    name: <span class="s">"박주경"</span>,
+    locate: <span class="s">"Seoul, Korea"</span>,
+    skill: [<span class="s">"HTML"</span>, <span class="s">"CSS"</span>, <span class="s">"SCSS"</span>, <span class="s">"JavaScript"</span>, <span class="s">"jQuery"</span>, <span class="s">"GSAP"</span>],
+    opend: <span class="p">true</span>,
+    update: <span class="s">"2026-08-05"</span>,
+    call: <span class="f">()</span> <span class="k">=></span> {
+        ui.<span class="f">alert</span>(<span class="s">"Hello, world!"</span>);
+    }
+};</pre>
+      </div>
+
+      <div class="section-title">Folders</div>
+      <div class="grid">
+        <a class="card" href="https://github.com/7ukung/7ukung/tree/main/gsap">
+          <div class="top"><span class="ico">🌀</span><span class="arrow">→</span></div>
+          <div class="name">gsap</div>
+          <div class="desc">스크롤 애니메이션, 트리거</div>
+        </a>
+        <a class="card" href="https://github.com/7ukung/7ukung/tree/main/javascript">
+          <div class="top"><span class="ico">⚙️</span><span class="arrow">→</span></div>
+          <div class="name">javascript</div>
+          <div class="desc">바닐라 JS / jQuery 스니펫</div>
+        </a>
+        <a class="card" href="https://github.com/7ukung/7ukung/tree/main/css">
+          <div class="top"><span class="ico">🎨</span><span class="arrow">→</span></div>
+          <div class="name">css</div>
+          <div class="desc">레이아웃, 텍스트 처리</div>
+        </a>
+        <a class="card" href="https://github.com/7ukung/7ukung/tree/main/slick">
+          <div class="top"><span class="ico">🎞️</span><span class="arrow">→</span></div>
+          <div class="name">slick</div>
+          <div class="desc">슬라이더 옵션 정리</div>
+        </a>
+        <a class="card" href="https://github.com/7ukung/7ukung/tree/main/swiper">
+          <div class="top"><span class="ico">🌊</span><span class="arrow">→</span></div>
+          <div class="name">swiper</div>
+          <div class="desc">코버플로우, 반응형 슬라이드</div>
+        </a>
+        <a class="card" href="https://github.com/7ukung/7ukung/tree/main/etc">
+          <div class="top"><span class="ico">📎</span><span class="arrow">→</span></div>
+          <div class="name">etc</div>
+          <div class="desc">이미지맵 등 기타</div>
+        </a>
+      </div>
+
+      <footer>
+        <span>© 2026 7ukung</span>
+        <a href="https://github.com/7ukung" target="_blank" rel="noopener">github.com/7ukung ↗</a>
+      </footer>
+    </div>
+  </main>
+
+</div>
+
+</body>
+</html>
