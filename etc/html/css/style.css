@@ -1,0 +1,58 @@
+/* Common **********************************************************************/
+/* @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css); <-- 기존에 있던 것 */
+/*  Nanum Gothic (Korean) http://www.google.com/fonts/earlyaccess   */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Common **********************************************************************/ 
+html,body {width:100%; }
+html {overflow-y:scroll; box-sizing:border-box;}
+*, *:before, *:after{box-sizing:inherit;}
+*{
+-webkit-text-size-adjust:none;
+-webkit-text-size-adjust - auto | none | N% (default auto)
+}
+body {word-break:break-all;-ms-word-break:break-all; }
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button {margin:0; padding:0;}
+fieldset,img {border:0px none; vertical-align:top;display: block;}
+dl,ul,ol,menu,li {list-style:none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,q:before, q:after {content:''; content:none;}
+button {border:0 none; background-color:transparent; cursor:pointer;}
+body { background:#fff;}
+body,th,td,input,select,textarea,button {font-size:13px; line-height:1.6; font-family: "Noto Sans KR", sans-serif;color:#7d7d7d;} 
+input, select, textarea, button{vertical-align:middle; }
+a:link,a:active,a:visited{color:#7d7d7d; text-decoration:none; border:0px;}
+a:hover,a:focus{color:#333; text-decoration:none}
+
+table {border-collapse:collapse; border-spacing:0;}
+address,caption,cite,code,dfn,em,var {font-style:normal; font-weight:normal;}
+summary, caption, legend, hr {width:0; height:0; font-size: ; line-height: ; overflow: hidden; visibility: hidden; border: none; position:absolute; left:-1000em;}
+caption {position:static;}
+/* label hidden 처리 */
+.invisible, .hide{overflow:hidden; visibility:hidden; width:0; height:0; font-size:0; line-height:0; position:absolute;}
+label.invisible{*position:Absolute;}
+
+.center{text-align:center;}
+.pc_img {display:block;}
+.tab_img {display:none;}
+.mob_img {display:none;}
+.pc {display:block;}
+.tab {display:none;}
+.mob {display:none;}
+
+
+:root{
+	--co01: #003668;
+}
+
+::selection{color: #fff; background: var(--co01);}
+
+.fp{font-family: "Poppins", sans-serif;}
+
+/* ==main== */
+#wrap{ position: relative; width: 100%; max-width: 100%;  margin: 0 auto; overflow: hidden;min-width: 1400px;word-break: break-word;}
+.inner{width: 1400px; margin: 0 auto; max-width:100%;}
+
+

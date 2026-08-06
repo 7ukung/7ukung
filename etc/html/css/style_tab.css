@@ -1,0 +1,18 @@
+@media screen and (max-width:1400px) {
+
+.center{text-align:center;}
+.pc_img {display:none;}
+.tab_img {display:block;}
+.mob_img {display:none;}
+.pc {display:none;}
+.tab {display:block;}
+.mob {display:none;}
+
+/* === Main === */
+#wrap {position:relative; width:100%; max-width:1400px; min-width: 375px; margin:0 auto; overflow:hidden;}
+.inner{width:100%; margin:0 auto; padding: 0 2.6%; }
+
+
+
+
+}
