@@ -27,7 +27,7 @@
 .sub0101_wrap .con02 .box_wrap .box{width: calc(100% / 3);flex-shrink: 0;}
 ```
 
-###js
+### js
 #### gsap 버전 맞추기
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
