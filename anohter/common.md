@@ -150,3 +150,34 @@ input:focus,select:focus,textarea:focus{outline:0;}
 <body leftmargin="0" topmargin="0">
 	<div id="objContents">
 ```
+
+## main
+```js
+//lenis
+ScrollTrigger.config({ normalizeScroll: true }); 
+
+const lenis = new Lenis();
+
+lenis.on('scroll', ScrollTrigger.update);
+
+//gsap	
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000); 
+});
+
+gsap.ticker.lagSmoothing(0);
+
+document.addEventListener("DOMContentLoaded", (event) => {
+gsap.registerPlugin(ScrollTrigger,SplitText)
+
+
+
+});//end
+
+
+
+//aos
+AOS.init({
+	once:true
+});
+```
