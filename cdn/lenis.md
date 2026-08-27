@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.20/dist/lenis.css">
 ```
 
-##js
+## js
 ```js
 // Initialize Lenis
 const lenis = new Lenis({
