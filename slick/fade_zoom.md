@@ -2,16 +2,19 @@
 
 ## js
 ```js
+//visual
 var $visual = $('.visual');
 
 $visual.on('beforeChange', function(event, slider, currentSlide, nextSlide){
   // 다음에 보여질 슬라이드는 미리 확대 상태를 초기화해둔다 (안 보이는 시점이라 티 안남)
   $(slider.$slides[nextSlide]).find('.pc_img').removeClass('zoom');
+  $(slider.$slides[nextSlide]).find('img').removeClass('zoom');
 });
 
 $visual.on('afterChange', function(event, slider, currentSlide){
   // 현재 슬라이드가 활성화된 직후부터 확대 애니메이션 시작
   $(slider.$slides[currentSlide]).find('.pc_img').addClass('zoom');
+  $(slider.$slides[currentSlide]).find('img').addClass('zoom');
 });
 
 $visual.slick({
@@ -28,7 +31,8 @@ $visual.slick({
 });
 
 // 초기 첫 슬라이드도 zoom 클래스 부여
-$visual.find('.slick-slide.slick-active .pc_img').addClass('zoom');
+$visual.find('.slick-slide.slick-active .pc_img ,.slick-slide.slick-active img').addClass('zoom');
+
 ```
 
 ## css
