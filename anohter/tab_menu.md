@@ -2,118 +2,96 @@
 
 ## html
 ```html
-<div class="tab_menu">
+<div class="tab_menu_mob">
 	<div class="inner">
-		<a href="/main.php" class="home"></a>
 		<ul class="menu">
 			<li class="menulink01">
-				<a href="#none"><?=$title_text1?></a>
+				<a href="#none"><?=$titleText['title_text1']?></a>
 				<ul>
-					<li class='<?=($page_loc=="sub01")?" on":"";?>'><a href="/sub01/sub01.php">회사소개</a></li>
-					<!-- <li class='<?=($page_loc=="sub02")?" on":"";?>'><a href="/sub02/sub01.php">R&D 사업부문</a></li> -->
-					<!-- <li class='<?=($page_loc=="sub03")?" on":"";?>'><a href="/sub03/sub01.php">AI 사업부문</a></li>
-					<li class='<?=($page_loc=="sub04")?" on":"";?>'><a href="/sub04/sub01.php">DT 사업부문</a></li>
-					<li class='<?=($page_loc=="sub05")?" on":"";?>'><a href="/sub05/sub01.php">DP 사업부문</a></li> -->
-					<!-- <li class='<?=($page_loc=="sub06")?" on":"";?>'><a href="/bbs/board.php?tbl=bbs63">커뮤니티</a></li> <a href="/bbs/board.php?tbl=bbs61">커뮤니티</a> 로 되어있는 문구 수정( 소식지로 이동하기) by 서혁택 -->
+					<li class='<?=($pageLoc['page_loc1'] == "sub01")?" on":"";?>'><a href="<?=url_to('sub01_sub01')?>">신중년 아지트는</a></li>
+					<li class='<?=($pageLoc['page_loc1'] == "sub02")?" on":"";?>'><a href="<?=url_to('sub02_sub01')?>">프로그램</a></li>
+					<li class='<?=($pageLoc['page_loc1'] == "sub03")?" on":"";?>'><a href="<?=url_to('sub03_sub01')?>">커뮤니티</a></li>
+					<li class='<?=($pageLoc['page_loc1'] == "sub04")?" on":"";?>'><a href="<?=url_to('sub04_sub01')?>">공간대여</a></li>
+					<li class='<?=($pageLoc['page_loc1'] == "sub05")?" on":"";?>'><a href="<?=url_to('sub05_sub01')?>">공지사항</a></li>
 				</ul>
 			</li><!--// menulink	01 -->
-			<? if($page_loc=="sub01")  { ?>		
+			<? if($pageLoc['page_loc1'] == "sub01")  { ?>		
 			<li class="menulink02">
-				<a href="#none"><?=$title_text2?></a>
+				<a href="#none"><?=$titleText['title_text2']?></a>
 				<ul>
-					<li <?=($PHP_SELF == "/sub01/sub01.php")?"class='on'":"class='#none'";?>><a href="/sub01/sub01.php"><span>회사개요</span></a></li>
-					<!-- <li <?=($PHP_SELF == "/sub01/sub02.php")?"class='on'":"class='#none'";?>><a href="/sub01/sub02.php"><span>비전</span></a></li> -->
-					<li <?=($PHP_SELF == "/sub01/sub03.php")?"class='on'":"class='#none'";?>><a href="/sub01/sub03.php"><span>연혁</span></a></li>
-					<li <?=($PHP_SELF == "/sub01/sub04.php")?"class='on'":"class='#none'";?>><a href="/sub01/sub04.php"><span>조직도</span></a></li>
-					<li <?=($PHP_SELF == "/sub01/sub05.php")?"class='on'":"class='#none'";?>><a href="/sub01/sub05.php"><span>오시는 길 </span></a></li>
-				</ul>
-			</li><!--// menulink02 -->
-			<? } ?>
-
-			<? if($page_loc=="sub02")  { ?>		
-			<li class="menulink02">
-				<a href="#none"><?=$title_text2?></a>
-				<ul>
-					<li <?=($PHP_SELF == "/sub02/sub01.php")?"class='on'":"class='#none'";?>><a href="/sub02/sub01.php"><span>X-Factor 개요</span></a></li>
-					<!-- <li <?=($PHP_SELF == "/sub02/sub02.php")?"class='on'":"class='#none'";?>><a href="/sub02/sub02.php"><span>Architecture</span></a></li>
-					<li <?=($PHP_SELF == "/sub02/sub03.php")?"class='on'":"class='#none'";?>><a href="/sub02/sub03.php"><span>Data Pipeline N step Fully Plug-in</span></a></li>
-					<li <?=($PHP_SELF == "/sub02/sub04.php")?"class='on'":"class='#none'";?>><a href="/sub02/sub04.php"><span>Reader & Extract</span></a></li>
-					<li <?=($PHP_SELF == "/sub02/sub05.php")?"class='on'":"class='#none'";?>><a href="/sub02/sub05.php"><span>Analysis</span></a></li>
-					<li <?=($PHP_SELF == "/sub02/sub07.php")?"class='on'":"class='#none'";?>><a href="/sub02/sub07.php"><span>X-Factor-ETL</span></a></li> -->
-					<li <?=($PHP_SELF == "/sub02/sub06.php")?"class='on'":"class='#none'";?>><a href="/sub02/sub06.php"><span>기대효과</span></a></li>
+					<li <?=($pageLoc['page_loc2'] == "sub01_sub01")?"class='on'":"class='#none'";?>><a href="<?=url_to('sub01_sub01')?>">신중년 아지트</a></li>
+					<li <?=($pageLoc['page_loc2'] == "sub01_sub02")?"class='on'":"class='#none'";?>><a href="<?=url_to('sub01_sub02')?>">운영안내</a></li>
+					<li <?=($pageLoc['page_loc2'] == "sub01_sub03")?"class='on'":"class='#none'";?>><a href="<?=url_to('sub01_sub03')?>">공간소개</a></li>
+					<li <?=($pageLoc['page_loc2'] == "sub01_sub04")?"class='on'":"class='#none'";?>><a href="<?=url_to('sub01_sub04')?>">오시는길</a></li>
 				</ul>
 			</li><!--// menulink02 -->
 			<? } ?>
 			
-			<? if($page_loc=="sub03")  { ?>		
+			<? if($pageLoc['page_loc1'] == "sub02")  { ?>		
 			<li class="menulink02">
-				<a href="#none"><?=$title_text2?></a>
+				<a href="#none"><?=$titleText['title_text2']?></a>
 				<ul>
-					<li <?=($PHP_SELF == "/sub03/sub01.php")?"class='on'":"class='#none'";?>><a href="/sub03/sub01.php"><span>Hyperscience</span></a></li>
-					<li <?=($PHP_SELF == "/sub03/sub02.php")?"class='on'":"class='#none'";?>><a href="/sub03/sub02.php"><span>AIstation</span></a></li>
+					<li <?=($pageLoc['page_loc2'] == "sub02_sub01")?"class='on'":"class='#none'";?>><a href="<?=url_to('sub02_sub01')?>">프로그램 안내</a></li>
+					<li <?=($pageLoc['page_loc2'] == "sub02_sub02")?"class='on'":"class='#none'";?>><a href="<?=url_to('sub02_sub02')?>">프로그램 신청</a></li>
+				</ul>
+			</li><!--// menulink02 -->
+			<? } ?>
+			
+			<? if($pageLoc['page_loc1'] == "sub03")  { ?>		
+			<li class="menulink02">
+				<a href="#none"><?=$titleText['title_text2']?></a>
+				<ul>
+					<li <?=($pageLoc['page_loc2'] == "sub03_sub01")?"class='on'":"class='#none'";?>><a href="<?=url_to('sub03_sub01')?>">커뮤니티 지원 안내</a></li>
+					<li <?=($pageLoc['page_loc2'] == "sub03_sub02")?"class='on'":"class='#none'";?>><a href="<?=url_to('sub03_sub02')?>">커뮤니티 활동</a></li>
+				</ul>
+			</li><!--// menulink02 -->
+			<? } ?>
+			
+			<? if($pageLoc['page_loc1'] == "sub04")  { ?>		
+			<li class="menulink02">
+				<a href="#none"><?=$titleText['title_text2']?></a>
+				<ul>
+					<li <?=($pageLoc['page_loc2'] == "sub04_sub01")?"class='on'":"class='#none'";?>><a href="<?=url_to('sub04_sub01')?>">이용안내</a></li>
+					<li <?=($pageLoc['page_loc2'] == "sub04_sub02")?"class='on'":"class='#none'";?>><a href="<?=url_to('sub04_sub02')?>">스터디룸 소개</a></li>
+					<li <?=($pageLoc['page_loc2'] == "sub04_sub03")?"class='on'":"class='#none'";?>><a href="<?=url_to('sub04_sub03')?>">온라인 예약</a></li>
+				</ul>
+			</li><!--// menulink02 -->
+			<? } ?>
+			
+			<? if($pageLoc['page_loc1'] == "sub05")  { ?>		
+			<li class="menulink02">
+				<a href="#none"><?=$titleText['title_text2']?></a>
+				<ul>
+					<li <?=($pageLoc['page_loc2'] == "sub05_sub01")?"class='on'":"class='#none'";?>><a href="<?=url_to('sub05_sub01')?>">공지사항</a></li>
+					<li <?=($pageLoc['page_loc2'] == "sub05_sub02")?"class='on'":"class='#none'";?>><a href="<?=url_to('sub05_sub02')?>">갤러리</a></li>
+					<li <?=($pageLoc['page_loc2'] == "sub05_sub03")?"class='on'":"class='#none'";?>><a href="<?=url_to('sub05_sub03')?>">문의게시판</a></li>
 				</ul>
 			</li><!--// menulink02 -->
 			<? } ?>
 
-			<? if($page_loc=="sub04")  { ?>		
-			<!-- <li class="menulink02">
-				<a href="#none"><?=$title_text2?></a>
-				<ul>
-					<li <?=($PHP_SELF == "/sub04/sub01.php")?"class='on'":"class='#none'";?>><a href="/sub04/sub01.php"><span>Tanium</span></a></li>
-					<li <?=($PHP_SELF == "/sub04/sub02.php")?"class='on'":"class='#none'";?>><a href="/sub04/sub02.php"><span>X-Factor Dashboard</span></a></li>
-					<li <?=($PHP_SELF == "/sub04/sub03.php")?"class='on'":"class='#none'";?>><a href="/sub04/sub03.php"><span>X-Factor-Comply</span></a></li>
-					 <li <?=($PHP_SELF == "/sub04/sub04.php")?"class='on'":"class='#none'";?>><a href="/sub04/sub04.php"><span>Tatum</span></a></li> 
-				</ul>
-			</li> --><!--// menulink02 -->
-			<? } ?>
-
-			<? if($page_loc=="sub05")  { ?>		
-			<li class="menulink02">
-				<a href="#none"><?=$title_text2?></a>
-				<ul>
-					<li <?=($PHP_SELF == "/sub05/sub01.php")?"class='on'":"class='#none'";?>><a href="/sub05/sub01.php"><span>Tanium</span></a></li>
-					<li <?=($PHP_SELF == "/sub05/sub02.php")?"class='on'":"class='#none'";?>><a href="/sub05/sub02.php"><span>Teradata Vantage</span></a></li>
-					<!-- <li <?=($PHP_SELF == "/sub05/sub03.php")?"class='on'":"class='#none'";?>><a href="/sub05/sub03.php"><span>QueryGrid</span></a></li>
-					<li <?=($PHP_SELF == "/sub05/sub04.php")?"class='on'":"class='#none'";?>><a href="/sub05/sub04.php"><span>X-Factor-DF</span></a></li> -->
-					<!-- <li <?=($PHP_SELF == "/sub05/sub05.php")?"class='on'":"class='#none'";?>><a href="/sub05/sub05.php"><span>X-Factor-ETL</span></a></li> -->
-				</ul>
-			</li><!--// menulink02 -->
-			<? } ?>
-
-			<? if($page_loc=="sub06")  { ?>		
-			<li class="menulink02">
-				<a href="#none"><?=$title_text2?></a>
-				<ul>
-					<!-- <li <?=($PHP_SELF == "/sub06/sub01.php" or $Table == "bbs61")?"class='on'":"class='#none'";?>><a href="/bbs/board.php?tbl=bbs61"><span>공지사항</span></a></li>
-					<li <?=($PHP_SELF == "/sub06/sub02.php" or $Table == "bbs62")?"class='on'":"class='#none'";?>><a href="/bbs/board.php?tbl=bbs62"><span>FAQ</span></a></li> -->
-					<li <?=($PHP_SELF == "/sub06/sub03.php" or $Table == "bbs63")?"class='on'":"class='#none'";?>><a href="/bbs/board.php?tbl=bbs63"><span>소식지</span></a></li>
-					<li <?=($PHP_SELF == "/sub06/sub04.php" or $Table == "bbs64")?"class='on'":"class='#none'";?>><a href="/bbs/board.php?tbl=bbs64"><span>자료실</span></a></li>
-					<li <?=($PHP_SELF == "/sub06/sub05.php" or $Table == "bbs65")?"class='on'":"class='#none'";?>><a href="/bbs/board.php?tbl=bbs65"><span>갤러리</span></a></li>
-					<!-- <li <?=($PHP_SELF == "/sub06/sub06.php" or $Table == "bbs66")?"class='on'":"class='#none'";?>><a href="/sub06/sub06.php"><span>문의하기</span></a></li> -->
-				</ul>
-			</li><!--// menulink02 -->
-			<? } ?>
+			
 
 		</ul><!-- // menu -->
 	</div><!-- // inner -->
-</div><!-- // tab_menu -->
+</div><!-- // tab_menu_mob -->
+
 ```
 
 ## js
 ```js
 <script>
   $(document).ready(function(){
-		$('.tab_menu .menulink01').click(function(){
+		$('.menulink01').click(function(){
 			$(this).find('ul').stop().slideToggle();
 			$(this).toggleClass('on');
-			$('.tab_menu .menu > li').not(this).find('ul').slideUp();
+			$('.menu > li').not(this).find('ul').slideUp();
 			$('.tab_menu .menu > li').not(this).removeClass('on');
 		});
-		$('.tab_menu .menulink02').click(function(){
+		$('.menulink02').click(function(){
 			$(this).find('ul').stop().slideToggle();
 			$(this).toggleClass('on');
-			$('.tab_menu .menu > li').not(this).find('ul').slideUp();
-			$('.tab_menu .menu > li').not(this).removeClass('on');
+			$('.menu > li').not(this).find('ul').slideUp();
+			$('.menu > li').not(this).removeClass('on');
 		});
 		//$('.menulink03').click(function(){
 		//	$(this).find('ul').stop().slideToggle();
@@ -124,19 +102,22 @@
 	});
 </script>
 
+
+
 ```
 
 ## css
 ```css
-.tab_menu {display: block; width:100%; height:70px; background:#fff; border:1px solid #ddd;border-top: none;}
-.tab_menu .inner{position:relative; display: flex; height:100%;}
-.tab_menu a.home{position: relative;display: block;width: 70px; height: 100%; background: url(/images/sub/tab_home_pc.png)center no-repeat #0081c6; }
-.tab_menu .menu {display: flex; width:calc(100%); height:100%;}
-.tab_menu .menu > li {position:relative; min-width:318px; height:100%; background:url("/images/sub/tab_bt_pc.png") center right 18px no-repeat; }
-.tab_menu .menu > li.on {background-image:url("/images/sub/tab_top_pc.png");}
-.tab_menu .menu > li > a {display:flex; align-items:center; padding: 0 20px 0 10px; width:100%; height:100%; font-size: 17px; color:#222; font-weight: 500; line-height:1.2; box-sizing:border-box; word-break:keep-all;border-right: 1px solid #ddd;}
-.tab_menu .menu > li ul {display:none; position:absolute; width:100%; top:100%; left:-1px; padding:15px 0; box-sizing:content-box; background-color:#fff; z-index:10;border:1px solid #ddd}
-.tab_menu .menu > li ul li ~ li { margin-top:20px;}
-.tab_menu .menu > li ul li a {display:flex; align-items:center; position:relative; width:100%; font-size:17px; color:#555;  font-weight: 400;padding:0 10px 0 10px; box-sizing:border-box; line-height:1.2;transition:.3s}
-.tab_menu .menu > li ul li a:hover{color: #0081c6;}
+.tab_menu_mob {display: block;position: absolute;bottom: -30px; width:100%; height:55px; line-height: 1;}
+.tab_menu_mob .inner{position:relative; display: flex; height:100%;}
+.tab_menu_mob .menu {display: flex; width:calc(100%); height:100%;background:#000; }
+.tab_menu_mob .menu > li {position:relative;flex:1; height:100%;}
+.tab_menu_mob .menu > li.menulink01::before{content:'';position: absolute; right: 0; top: 50%; transform:translateY(-50%); width: 1px; height: 12px; background: rgba(255,255,255,.3);}
+.tab_menu_mob .menu > li::after{content:'';position: absolute; right: 20px; top: 50%; transform:translateY(-50%);width: 10px; height: 6px; background: url(/assets/images/sub/tab_arr_tab.png)center no-repeat; background-size: cover;}
+.tab_menu_mob .menu > li > a {display:flex; align-items:center; padding: 0 20px 0 20px; width:100%; height:100%; font-size: 15px; color:#fff; font-weight: 500; line-height:1.2; box-sizing:border-box; word-break:keep-all;}
+.tab_menu_mob .menu > li ul {display:none; position:absolute; width:100%; top:100%; left:-1px; padding:20px 0; box-sizing:content-box; background-color:#fff; z-index:10;box-shadow: 4px 4px 8px rgba(0,0,0,.15);}
+.tab_menu_mob .menu > li ul li ~ li { margin-top:27px;}
+.tab_menu_mob .menu > li ul li a {display:flex; align-items:center; position:relative; width:100%; font-size:14px; color:#666;  font-weight: 400;padding:0 20px; box-sizing:border-box; line-height:1.2;transition:.3s}
+.tab_menu_mob .menu > li ul li.on a{color: var(--co01);font-weight: 700;}
+
 ```
