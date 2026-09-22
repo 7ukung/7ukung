@@ -7,7 +7,7 @@
 ```js
 var visAni01 = gsap.timeline({
       var visAni01 = gsap.timeline({
-      defaults: { clearProps: 'width,height' },
+      defaults: { clearProps: 'width,height' }, //반응형대응
 	  scrollTrigger: {
 		//trigger: "#visual_wrap",
 		pin: false,
