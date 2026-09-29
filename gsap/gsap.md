@@ -20,19 +20,7 @@ var visAni01 = gsap.timeline({
 	  visAni02
 		.from('#visual_wrap .img_wrap .img01', {y:50,duration: 0.5, ease: 'power3.out',stagger:.2},'<')  
 
-	  scrollTrigger: {
-		//trigger: "#visual_wrap",
-		pin: false,
-		//markers: true,
-		scrub: false,
-		start: 'top 80%',
-    toggleActions: "play reverse play reverse",
-	  }
-	});
-
-	  visAni02
-		.from('#visual_wrap .img_wrap .img01', {y:50,duration: 0.5, ease: 'power3.out',stagger:.2},'<')  
-
+	 
 ```
 
 ### 설명
