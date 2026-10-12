@@ -17,6 +17,16 @@
 
 ## Tab-menu js
 ```js
+//슬라이드 사용 안할때
+$('.tab-menu-wrap a').eq(0).addClass("on"); 
+$('.tab-container .tab-con').hide().eq(0).show();
+	$('.tab-menu-wrap a').on('click',function(){
+		var num = $(this).index();
+		$('.tab-menu-wrap a').removeClass('on').eq(num).addClass("on"); 
+		$('.tab-container .tab-con').hide().eq(num).show();
+});
+
+//슬라이드 사용할때
 function tabMenu(target) {
     const $tabMenu = $(target).find('.tab-menu-wrap a');
     const $tabCon = $(target).find('.tab-container .tab-con');
